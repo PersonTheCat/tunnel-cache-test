@@ -56,13 +56,13 @@ public class SphereData {
     public void forEach(PositionConsumer f) {
         for (int i = 0; i < index; i++) {
             final int data = positions[i];
-            f.accept(data >> 12, data >> 8 & Z_MASK, data & Y_MASK);
+            f.accept(data >> 12, data & Y_MASK, data >> 8 & Z_MASK);
         }
     }
 
     /** Clears all data from the array and resets the cursor to 0. */
     public void reset() {
-        Arrays.fill(positions, 0); // This avoids GC performance cost.
+        Arrays.fill(positions, 0, this.index, 0); // This avoids GC performance cost.
         this.index = 0;
     }
 }
