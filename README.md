@@ -1,7 +1,8 @@
 # Tunnel Cache Test
 This repository contains a couple of performance tests comparing cached
 vs manual sphere generation for repeated use cases. The results appear 
-to indicate a minimum 65% performance increase over manual generation.
+to indicate a minimum 65% performance increase over manual generation
+when used at a high volume in a single thread.
 
 # Rationale
 `SphereData` is based on the following principles:
